@@ -6,6 +6,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -208,6 +209,5 @@ public class ValidationItemControllerV2 {
         itemRepository.update(itemId, item);
         return "redirect:/validation/v2/items/{itemId}";
     }
-
 }
 
