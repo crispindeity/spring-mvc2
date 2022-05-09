@@ -9,6 +9,7 @@ import javax.servlet.Filter;
 
 import hello.login.web.filter.LogFilter;
 import hello.login.web.filter.LoginCheckFilter;
+import hello.login.web.interceptor.LoginCheckInterceptor;
 import hello.login.web.interceptor.LoginInterceptor;
 
 @Configuration
@@ -20,6 +21,11 @@ public class WebConfig implements WebMvcConfigurer {
                 .order(1)
                 .addPathPatterns("/**")
                 .excludePathPatterns("/css/**", "/*.ico", "/error");
+        registry.addInterceptor(new LoginCheckInterceptor())
+                .order(2)
+                .addPathPatterns("/**")
+                .excludePathPatterns("/", "/members/add", "/login", "/logout",
+                        "/css/**", "/*.ico", "/error");
     }
 
     //    @Bean
