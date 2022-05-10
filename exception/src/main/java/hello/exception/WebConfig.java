@@ -13,6 +13,7 @@ import javax.servlet.Filter;
 import hello.exception.filter.LogFilter;
 import hello.exception.interceptor.LogInterceptor;
 import hello.exception.resolver.MyHandlerExceptionResolver;
+import hello.exception.resolver.UserHandlerExceptionResolver;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
@@ -31,6 +32,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
         resolvers.add(new MyHandlerExceptionResolver());
+        resolvers.add(new UserHandlerExceptionResolver());
     }
 
     @Override

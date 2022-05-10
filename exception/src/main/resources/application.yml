@@ -3,6 +3,6 @@ server:
     whitelabel:
       enabled: false
     include-exception: true
-#    include-message: on_param
+    include-message: always
 #    include-stacktrace: on_param
 #    include-binding-errors: on_param
